@@ -11,6 +11,8 @@ use App\Http\Controllers\AdminAuth\VerifyEmailController;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\Admin\ChildController;
 
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\BrandController;
@@ -88,7 +90,6 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
 
         Route::get('/banner-inactive/{id}', 'BannerInactive')->name('banner.inactive');
         Route::get('/banner-active/{id}', 'BannerActive')->name('banner.active');
-
     });
 
 
@@ -103,8 +104,6 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
 
         Route::get('/inactive-brand/{id}', 'InactiveBrand')->name('inactive.brand');
         Route::get('/active-brand/{id}', 'ActiveBrand')->name('active.brand');
-
-
     });
 
     // Category Section
@@ -115,11 +114,28 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
         Route::post('/update', 'UpdateCategory')->name('update.category');
         Route::get('/delete/{id}', 'DeleteCategory')->name('delete.category');
 
-
-
         Route::get('/inactive-category/{id}', 'InactiveCategory')->name('inactive.category');
         Route::get('/active-category/{id}', 'ActiveCategory')->name('active.category');
+    });
 
+
+    // Sub Category Section
+    Route::controller(SubCategoryController::class)->prefix('subcategory')->group(function(){
+
+        Route::get('/all', 'SubCategoryAll')->name('all.subcategory');
+        Route::post('/store', 'StoreSubCategory')->name('store.subcategory');
+        Route::post('/update', 'UpdateSubCategory')->name('update.subcategory');
+        Route::get('/delete/{id}', 'DeleteSubCategory')->name('delete.subcategory');
+
+
+        Route::get('/inactive-subcategory/{id}', 'InactiveSubCategory')->name('inactive.subcategory');
+        Route::get('/active-subcategory/{id}', 'ActiveSubCategory')->name('active.subcategory');
+    });
+
+    // Child Section
+    Route::controller(ChildController::class)->prefix('child')->group(function(){
+
+        Route::get('/all', 'AllChild')->name('all.child');
 
     });
 

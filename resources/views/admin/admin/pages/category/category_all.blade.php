@@ -17,20 +17,31 @@
 
                 </ul>
             </div>
-            <div class="ms-auto">
+            <div class="ms-auto mr-1">
                 <div class="btn-group">
-                    <a href="" data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-primary">Add
+                    <a href="{{ route('all.category') }}" class="btn" style="background: #2fb9e3;">
                         Category</a>
+                </div>
+                <div class="btn-group">
+                    <a href="{{ route('all.subcategory') }}" class="btn" style="background: #2fb9e3;">
+                       Sub Category</a>
+                </div>
+                <div class="btn-group">
+                    <a href="{{ route('all.child') }}" class="btn" style="background: #2fb9e3;">
+                        Child Category</a>
                 </div>
             </div>
         </div>
         <!--end breadcrumb-->
-        <div class="container">
-            <div class="main-body">
-                <div class="row">
-                    <div class="col-lg-4">
+        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3 pt-3">
 
-                    </div>
+            <div class="ps-3">
+
+            </div>
+            <div class="ms-auto">
+                <div class="btn-group">
+                    <a href="" data-bs-toggle="modal" data-bs-target="#addModal" class="btn" style="background: #537e8c; color:white">Add
+                        Category</a>
                 </div>
             </div>
         </div>
@@ -59,9 +70,9 @@
                                     <td>{{ $category->category_name }}</td>
                                     <td>
                                         @if ($category->status == 1)
-                                            <span class="badge badge-light-success">Active</span>
+                                            <span class="badge bg-success">Active</span>
                                         @else
-                                            <span class="badge badge-light-danger">inactive</span>
+                                            <span class="badge bg-danger">inactive</span>
                                         @endif
                                     </td>
                                     <td>

@@ -34,7 +34,8 @@
             <ul>
                 <li> <a href="{{ route('all.brand') }}"><i class="bx bx-right-arrow-alt"></i>Brand</a>
                 </li>
-            </ul><ul>
+            </ul>
+            <ul>
                 <li> <a href="{{ route('all.category') }}"><i class="bx bx-right-arrow-alt"></i>Category</a>
                 </li>
             </ul>
