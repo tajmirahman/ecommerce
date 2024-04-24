@@ -14,7 +14,7 @@ class SubCategoryController extends Controller
 {
     public function SubCategoryAll(){
 
-            $categorys= Category::orderBy('category_name','ASC')->latest()->get();
+        $categorys= Category::orderBy('category_name','ASC')->latest()->get();
         $subcatories= SubCategory::all();
         return view('admin.admin.pages.subcategory.all_subcategory',compact('subcatories','categorys'));
     }// End Methods
@@ -178,5 +178,11 @@ class SubCategoryController extends Controller
         return redirect()->route('all.subcategory');
 
     }// End Methods
+
+    public function GetSubCategory($category_id){
+        $subcat= SubCategory::where('category_id',$category_id)->orderBy('subcategory_name', 'ASC')->get();
+        return json_encode($subcat);
+    }// End Methods
+
 
 }

@@ -10,5 +10,9 @@ class Child extends Model
     use HasFactory;
 
     protected $guarded = [];
+
     
+
+
+
 }

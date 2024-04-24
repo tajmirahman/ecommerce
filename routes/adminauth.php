@@ -130,12 +130,16 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
 
         Route::get('/inactive-subcategory/{id}', 'InactiveSubCategory')->name('inactive.subcategory');
         Route::get('/active-subcategory/{id}', 'ActiveSubCategory')->name('active.subcategory');
+
+        Route::get('/subcategory/ajax/{category_id}', 'GetSubCategory');
+
     });
 
     // Child Section
     Route::controller(ChildController::class)->prefix('child')->group(function(){
 
         Route::get('/all', 'AllChild')->name('all.child');
+        Route::post('/store', 'StoreChild')->name('store.child');
 
     });
 

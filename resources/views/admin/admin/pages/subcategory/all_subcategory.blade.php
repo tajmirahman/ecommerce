@@ -24,10 +24,10 @@
                 </div>
                 <div class="btn-group">
                     <a href="{{ route('all.subcategory') }}" class="btn" style="background: #2fb9e3;">
-                        Sub Category</a>
+                       Sub Category</a>
                 </div>
                 <div class="btn-group">
-                    <a href="" class="btn" style="background: #2fb9e3;">
+                    <a href="{{ route('all.child') }}" class="btn" style="background: #2fb9e3;">
                         Child Category</a>
                 </div>
             </div>
