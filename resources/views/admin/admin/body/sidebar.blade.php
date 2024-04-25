@@ -1,10 +1,10 @@
-<div class="sidebar-wrapper" data-simplebar="true">
+<div class="sidebar-wrapper" data-simplebar="true" style="background-color: rgb(230, 237, 242)">
     <div class="sidebar-header">
         <div>
             <img src="{{ asset('backend') }}/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
         </div>
         <div>
-            <h4 class="logo-text">Rukada</h4>
+            <h4 class="logo-text">E-commerce</h4>
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>
@@ -37,6 +37,10 @@
             </ul>
             <ul>
                 <li> <a href="{{ route('all.category') }}"><i class="bx bx-right-arrow-alt"></i>Category</a>
+                </li>
+            </ul>
+            <ul>
+                <li> <a href="{{ route('all.color') }}"><i class="bx bx-right-arrow-alt"></i>Color</a>
                 </li>
             </ul>
 

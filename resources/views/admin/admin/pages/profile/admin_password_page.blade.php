@@ -42,69 +42,58 @@
                     <div class="col-12">
                         <div class="card">
 
-                            <form action="{{ route('admin.profile.update') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('password.change') }}" method="POST">
 
                                 @csrf
 
                                 <div class="card-body">
-                                    <h4 class="mt-1 mb-4" style="text-align: center">Admin Profile Update</h4>
+                                    <h4 class="mt-1 mb-4" style="text-align: center">Admin Password Change</h4>
+
                                     <div class="row mb-3">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Full Name</h6>
+                                            <h6 class="mb-0">Old Password</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            <input type="text" name="name" class="form-control"
-                                                value="{{ $profileData->name }}" />
-                                        </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Email</h6>
-                                        </div>
-                                        <div class="col-sm-9 text-secondary">
-                                            <input type="email" name="email" class="form-control"
-                                                value="{{ $profileData->email }}" />
-                                        </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Phone</h6>
-                                        </div>
-                                        <div class="col-sm-9 text-secondary">
-                                            <input type="tel" name="phone" class="form-control"
-                                                value="{{ $profileData->phone }}" />
+                                            <input
+                                            class="form-control form-control-sm form-control-solid @error('old_password') is-invalid @enderror"
+                                            type="password" placeholder="" name="old_password" autocomplete="off" />
+
+                                        @error('old_password')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Address</h6>
+                                            <h6 class="mb-0">New Password</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            <input type="text" name="address" class="form-control"
-                                                value="{{ $profileData->address }}" />
-                                        </div>
-                                    </div>
+                                            <input
+                                            class="form-control form-control-sm form-control-solid @error('new_password') is-invalid @enderror"
+                                            type="password" placeholder="" name="new_password" autocomplete="off" />
 
-
-                                    <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Photo</h6>
-                                        </div>
-                                        <div class="col-sm-9 text-secondary">
-                                            <input type="file" name="photo" class="form-control" />
+                                        @error('new_password')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
                                         <div class="col-sm-3">
-
+                                            <h6 class="mb-0">Confirm Password</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            <img src="{{ url('upload/no_image.jpg') }}" style="width:73px" id="showImage"
-                                                alt="">
+                                            <input
+                                            class="form-control form-control-sm form-control-solid @error('new_password_cofirmation') is-invalid @enderror"
+                                            type="password" placeholder="" name="new_password_cofirmation" autocomplete="off" />
+
+                                        @error('new_password_cofirmation')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                         </div>
                                     </div>
+
 
                                     <div class="row">
                                         <div class="col-sm-3"></div>

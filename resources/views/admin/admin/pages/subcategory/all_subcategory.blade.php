@@ -173,7 +173,7 @@
                                                         <div class="modal-footer">
                                                             <button type="submit" class="btn btn-sm"
                                                                 style="background: #2fb9e3;">Update
-                                                                Category</button>
+                                                                Sub-Category</button>
                                                         </div>
                                                     </form>
                                                 </div>

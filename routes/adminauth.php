@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ChildController;
+use App\Http\Controllers\Admin\ColorController;
+use App\Http\Controllers\Admin\ProductController;
 
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\BrandController;
@@ -75,6 +77,12 @@ Route::middleware('auth:admin')->group(function () {
 
     //Admin Profile
     Route::get('admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
+    Route::post('admin/profile/update', [AdminController::class, 'AdminProfileUpdate'])->name('admin.profile.update');
+
+    Route::get('admin/password/page', [AdminController::class, 'AdminPasswordPage'])->name('admin.password.page');
+    Route::post('password/change', [AdminController::class, 'PasswordChange'])->name('password.change');
+
+
 });
 
 
@@ -140,6 +148,17 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
 
         Route::get('/all', 'AllChild')->name('all.child');
         Route::post('/store', 'StoreChild')->name('store.child');
+
+    });
+
+    // Color Section
+    Route::controller(ColorController::class)->prefix('color')->group(function(){
+
+        Route::get('/all', 'AllColor')->name('all.color');
+        Route::post('/store', 'StoreColor')->name('store.color');
+        Route::post('/update', 'UpdateColor')->name('update.color');
+        Route::get('/delete/{id}', 'DeleteColor')->name('delete.color');
+
 
     });
 
