@@ -18,11 +18,7 @@
                     </ol>
                 </nav>
             </div>
-            <div class="ms-auto">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-primary">Settings</button>
-                </div>
-            </div>
+            
         </div>
         <!--end breadcrumb-->
 

@@ -18,11 +18,7 @@
                     </ol>
                 </nav>
             </div>
-            <div class="ms-auto">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-primary">Settings</button>
-                </div>
-            </div>
+            
         </div>
         <!--end breadcrumb-->
 
@@ -85,10 +81,10 @@
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             <input
-                                            class="form-control form-control-sm form-control-solid @error('new_password_cofirmation') is-invalid @enderror"
-                                            type="password" placeholder="" name="new_password_cofirmation" autocomplete="off" />
+                                            class="form-control form-control-sm form-control-solid @error('new_password_confirmation') is-invalid @enderror"
+                                            type="password" placeholder="" name="new_password_confirmation" autocomplete="off" />
 
-                                        @error('new_password_cofirmation')
+                                        @error('new_password_confirmation')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>
@@ -112,16 +108,5 @@
         </div>
     </div>
 
-    {{-- Image Show  --}}
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#image').change(function(e) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#showImage').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(e.target.files['0']);
-            });
-        });
-    </script>
+
 @endsection
