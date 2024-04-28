@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('children', function (Blueprint $table) {
+        Schema::create('child_categories', function (Blueprint $table) {
             $table->id();
 
             $table->unsignedBigInteger('category_id');
@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('childcategory_image')->nullable();
             $table->string('status')->default(1);
 
+            
             $table->timestamps();
         });
     }
@@ -35,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('children');
+        Schema::dropIfExists('child_categories');
     }
 };

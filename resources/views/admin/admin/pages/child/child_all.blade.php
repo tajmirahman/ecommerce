@@ -1,7 +1,7 @@
 @extends('admin.admin.admin_dashboard')
 @section('admin')
     {{-- show Image Cdn --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <div class="page-content">
         <!--breadcrumb-->
@@ -150,27 +150,31 @@
 
                         <div class="row">
 
-
                             <div class="col-4 mb-3">
                                 <label for="" class="mb-2">Category Name</label>
-                                <select name="category_id" autocomplete="off" class="form-select form-select-sm"
-                                    id="">
-                                    <option disabled value="">Choose Category</option>
+
+                                <select name="category_id" autocomplete="off" class="form-select form-select-sm" id="">
+
+                                    <option value="">Choose Category</option>
 
                                     @foreach ($categorys as $category)
                                         <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                                     @endforeach
+
                                 </select>
+
+
+                                @error('category_id')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+
                             </div>
+
                             <div class="col-4 mb-3">
                                 <label for="" class="mb-2">SubCategory Name</label>
 
                                 <select name="subcategory_id" autocomplete="off" class="form-select form-select-sm">
-
-
-                                    <option ></option>
-
-
+                                    <option selected disabled>Choose SubCategory</option>
                                 </select>
 
                                 @error('subcategory_id')
@@ -180,8 +184,8 @@
                             </div>
 
                             <div class="col-4 mb-3">
-                                <label for="" class="mb-2">Child Category Name</label>
-                                <input type="text" name="childcategory_name" placeholder="Child Category Name"
+                                <label for="" class="mb-2">ChildCategory Name</label>
+                                <input type="text" name="childcategory_name" placeholder="ChildCategory Name"
                                     autocomplete="off"
                                     class="form-control form-control-sm @error('childcategory_name') is-invalid @enderror">
 
@@ -190,23 +194,23 @@
                                 @enderror
                             </div>
 
+
                             <div class="col-12 mb-3">
                                 <label for="" class="mb-2">Description</label>
-                                <textarea name="description" cols="2" placeholder="Write Something In Child Category" rows="2"
-                                    class="form-control form-control-sm"></textarea>
+                                <textarea name="description" placeholder="Write Some In ChildCategory" autocomplete="off" class="form-control" cols="2"
+                                    rows="2"></textarea>
                             </div>
 
                             <div class="col-12">
                                 <label for="" class="mb-2">Image</label>
-                                <input type="file" autocomplete="off" id="image" name="childcategory_image"
-                                    class="form-control form-control-sm mb-2 @error('childcategory_image') is-invalid @enderror">
+                                <input type="file" name="childcategory_image"
+                                   id="image" class="form-control form-control-sm imageSrc @error('childcategory_image') is-invalid @enderror">
 
                                 @error('childcategory_image')
-                                    <span class="text-danger mb-2"> {{ $message }} </span>
+                                    <div class="text-danger">{{ $message }}</div>
                                 @enderror
 
-                                <img src="{{ url('upload/no_image.jpg') }}" style="width:73px" id="showImage"
-                                    alt="">
+                                <img id="showImage" src="{{ asset('upload/no_image.jpg') }}" style="width: 73px; height:73px;" class="showImage mt-3" alt="">
                             </div>
 
                         </div>
@@ -228,6 +232,34 @@
 
 
 
+    <script>
+        $(document).ready(function() {
+            $('select[name="category_id"]').on('change', function() {
+                var category_id = $(this).val();
+                if (category_id) {
+                    $.ajax({
+                        url: "{{ url('/subcategory/ajax') }}/" + category_id,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(data) {
+                            $('select[name="subcategory_id"]').html('<option selected disabled>Choose SubCategory</option>');
+                            $.each(data, function(key, value) {
+                                $('select[name="subcategory_id"]').append(
+                                    '<option value="' + value.id + '">' + value.subcategory_name + '</option>'
+                                );
+                            });
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(xhr.responseText);
+                        }
+                    });
+                } else {
+                    $('select[name="subcategory_id"]').html('<option selected disabled>Choose SubCategory</option>');
+                }
+            });
+        });
+    </script>
+
 
     {{-- Image Show  --}}
     <script type="text/javascript">
@@ -243,34 +275,6 @@
     </script>
 
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('select[name="category_id"]').on('change', function() {
-                var category_id = $(this).val();
-                if (category_id) {
-                    $.ajax({
-                        url: "{{ url('/subcategory/ajax') }}/" + category_id,
-                        type: "GET",
-                        dataType: "json",
-                        success: function(data) {
-                            $('select[name="subcategory_id"]').html('');
-                            var d = $('select[name="subcategory_id"]').empty();
-                            $.each(data, function(key, value) {
-                                $('select[name="subcategory_id"]').append(
-                                    '<option value="' + value.id + '">' + value
-                                    .subcategory_name + '</option>');
-                            });
-                        },
-
-                    });
-                } else {
-                    alert('danger');
-                }
-            });
-        });
-
-
-    </script>
 
 
 @endsection

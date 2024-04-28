@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Admin\Child;
+use App\Models\Admin\ChildCategory;
 use App\Models\Admin\Category;
 use App\Models\Admin\SubCategory;
 use Helper;
@@ -15,7 +15,7 @@ class ChildController extends Controller
     public function AllChild(){
 
         $categorys= Category::orderBy('category_name','ASC')->latest()->get();
-        $childs= Child::all();
+        $childs= ChildCategory::all();
         return view('admin.admin.pages.child.child_all',compact('childs','categorys'));
     }// End Methods
 
@@ -43,7 +43,7 @@ class ChildController extends Controller
             $imgPath = storage_path('app/public/childcategory');
 
             if (empty($mainFile)) {
-                Child::insert([
+                ChildCategory::insert([
 
                     'category_id' => $request->category_id,
                     'subcategory_id' => $request->subcategory_id,
@@ -58,7 +58,7 @@ class ChildController extends Controller
 
                 if ($globalFunImg['status'] == 1) {
 
-                    Child::insert([
+                    ChildCategory::insert([
 
                         'category_id' => $request->category_id,
                         'subcategory_id' => $request->subcategory_id,

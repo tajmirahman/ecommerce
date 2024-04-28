@@ -14,7 +14,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ChildController;
 use App\Http\Controllers\Admin\ColorController;
-use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\HomePageController;
 
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\BrandController;
@@ -158,6 +158,10 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
         Route::post('/store', 'StoreColor')->name('store.color');
         Route::post('/update', 'UpdateColor')->name('update.color');
         Route::get('/delete/{id}', 'DeleteColor')->name('delete.color');
+    });
+
+    // Home Page Section
+    Route::controller(HomePageController::class)->prefix('home')->group(function(){
 
 
     });

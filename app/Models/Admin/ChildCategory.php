@@ -5,14 +5,10 @@ namespace App\Models\Admin;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Child extends Model
+class ChildCategory extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
-
     
-
-
-
 }

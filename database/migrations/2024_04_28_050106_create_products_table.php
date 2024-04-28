@@ -24,7 +24,7 @@ return new class extends Migration
             $table->foreign('subcategory_id')->references('id')->on('sub_categories')->onDelete('cascade');
 
             $table->unsignedBigInteger('childcategory_id');
-            $table->foreign('childcategory_id')->references('id')->on('childcategory_id')->onDelete('cascade');
+            $table->foreign('childcategory_id')->references('id')->on('child_categories')->onDelete('cascade');
 
             $table->string('product_name');
             $table->string('product_slug')->unique();
