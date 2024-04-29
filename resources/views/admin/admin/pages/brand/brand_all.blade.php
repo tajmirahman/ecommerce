@@ -53,7 +53,8 @@
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
                                     <td>
-                                        <img src="{{ asset('storage/brand/'.$brand->brand_image) }}" style="width: 40px;" alt="">
+                                        <img src="{{ asset('storage/brand/' . $brand->brand_image) }}" style="width: 40px;"
+                                            alt="">
                                     </td>
                                     <td>{{ $brand->brand_name }}</td>
                                     <td>
@@ -65,17 +66,17 @@
                                     </td>
                                     <td>
                                         @if ($brand->status == 1)
-                                            <a href="{{ route('inactive.brand',$brand->id) }}" title="Inactive"><i
+                                            <a href="{{ route('inactive.brand', $brand->id) }}" title="Inactive"><i
                                                     class="fa-solid fa-thumbs-down fs-3"></i></i></a>
                                         @else
-                                            <a href="{{ route('active.brand',$brand->id) }}" title="Active"><i
+                                            <a href="{{ route('active.brand', $brand->id) }}" title="Active"><i
                                                     class="fa-solid fa-thumbs-up fs-3"></i></i></a>
                                         @endif
 
                                         {{-- Edit Modal --}}
                                         <a href="" data-bs-toggle="modal"
-                                        data-bs-target="#editModal{{ $brand->id }}" class="ms-1" title="Edit"><i
-                                        class="fa-regular fa-pen-to-square fs-3"></i></a>
+                                            data-bs-target="#editModal{{ $brand->id }}" class="ms-1" title="Edit"><i
+                                                class="fa-regular fa-pen-to-square fs-3"></i></a>
 
                                         {{-- Star Edit Modal --}}
                                         <div class="modal fade" id="editModal{{ $brand->id }}" tabindex="-1"
@@ -158,8 +159,8 @@
 
                                         {{-- End Edit Modal --}}
 
-                                        <a href="{{ route('delete.brand', $brand->id) }}" id="delete"
-                                            title="delete"><i class="fa-solid fa-trash fs-3"></i></i>
+                                        <a href="{{ route('delete.brand', $brand->id) }}" id="delete" title="delete"><i
+                                                class="fa-solid fa-trash fs-3"></i></i>
                                         </a>
 
                                     </td>

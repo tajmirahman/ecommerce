@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminAuth\PasswordResetLinkController;
 use App\Http\Controllers\AdminAuth\VerifyEmailController;
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ChildController;
@@ -87,6 +88,17 @@ Route::middleware('auth:admin')->group(function () {
 
 
 Route::middleware(['auth:admin', 'verified'])->group(function () {
+
+
+    //Product Section
+    Route::controller(ProductController::class)->group(function () {
+
+        Route::get('/all','AllProduct')->name('all.product');
+        Route::get('/add','AddProduct')->name('add.product');
+
+    });
+
+
 
     //Banner Section
     Route::controller(BannerController::class)->prefix('banner')->group(function () {
