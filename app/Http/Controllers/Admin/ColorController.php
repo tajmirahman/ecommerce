@@ -48,7 +48,7 @@ class ColorController extends Controller
 
         Color::find($id)->delete();
 
-        toastr()->success('Color Delete Successfully');
+        toastr()->error('Color Delete Successfully');
         return redirect()->route('all.color');
 
     }// End Methods

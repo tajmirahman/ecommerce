@@ -12,12 +12,13 @@ use Illuminate\Support\Facades\File;
 
 class SubCategoryController extends Controller
 {
-    public function SubCategoryAll(){
+    public function AllSubCategory(){
 
         $categorys= Category::orderBy('category_name','ASC')->latest()->get();
         $subcatories= SubCategory::all();
         return view('admin.admin.pages.subcategory.all_subcategory',compact('subcatories','categorys'));
     }// End Methods
+
 
     public function StoreSubCategory(Request $request){
 
@@ -151,7 +152,7 @@ class SubCategoryController extends Controller
 
         $subcat->delete();
 
-        toastr()->success('SubCategory Delete Successfully');
+        toastr()->error('SubCategory Delete Successfully');
 
         return redirect()->route('all.subcategory');
 
@@ -183,6 +184,8 @@ class SubCategoryController extends Controller
         $subcat = SubCategory::where('category_id', $category_id)->orderBy('subcategory_name', 'ASC')->get();
         return response()->json($subcat);
     }// End Methods
+
+
 
 
 }

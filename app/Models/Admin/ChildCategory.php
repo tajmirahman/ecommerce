@@ -10,5 +10,5 @@ class ChildCategory extends Model
     use HasFactory;
 
     protected $guarded = [];
-    
+
 }

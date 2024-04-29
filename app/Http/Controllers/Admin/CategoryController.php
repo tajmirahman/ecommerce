@@ -140,7 +140,7 @@ class CategoryController extends Controller
 
         $category->delete();
 
-        toastr()->success('Category Delete Successfully');
+        toastr()->error('Category Delete Successfully');
 
         return redirect()->route('all.category');
 

@@ -23,8 +23,8 @@
                         Category</a>
                 </div>
                 <div class="btn-group">
-                    <a href="{{ route('all.subcategory') }}" class="btn" style="background: #2fb9e3;">
-                       Sub Category</a>
+                    <a href="" class="btn" style="background: #2fb9e3;">
+                        Sub Category</a>
                 </div>
                 <div class="btn-group">
                     <a href="{{ route('all.child') }}" class="btn" style="background: #2fb9e3;">
@@ -79,10 +79,10 @@
                                     <td>
 
                                         @if ($subcategory->status == 1)
-                                            <a href="{{ route('inactive.subcategory', $subcategory->id) }}" title="Inactive"><i
-                                                    class="fa-solid fa-thumbs-down fs-3"></i></i></i></a>
+                                            <a href="{{ route('subcategory.inactive', $subcategory->id) }}"
+                                                title="Inactive"><i class="fa-solid fa-thumbs-down fs-3"></i></i></i></a>
                                         @else
-                                            <a href="{{ route('active.subcategory', $subcategory->id) }}" title="Active"><i
+                                            <a href="{{ route('subcategory.active', $subcategory->id) }}" title="Active"><i
                                                     class="fa-solid fa-thumbs-up fs-3"></i></i></a>
                                         @endif
 

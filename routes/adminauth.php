@@ -128,18 +128,20 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
 
 
     // Sub Category Section
-    Route::controller(SubCategoryController::class)->prefix('subcategory')->group(function(){
+    Route::controller(SubCategoryController::class)->group(function () {
 
-        Route::get('/all', 'SubCategoryAll')->name('all.subcategory');
-        Route::post('/store', 'StoreSubCategory')->name('store.subcategory');
-        Route::post('/update', 'UpdateSubCategory')->name('update.subcategory');
-        Route::get('/delete/{id}', 'DeleteSubCategory')->name('delete.subcategory');
+        Route::get('/all-subcategory', 'AllSubCategory')->name('all.subcategory');
+        Route::post('/store-subcategory', 'StoreSubCategory')->name('store.subcategory');
+        Route::post('/update-subcategory', 'UpdateSubCategory')->name('update.subcategory');
+        Route::get('/delete/subcategory/{id}', 'DeleteSubCategory')->name('delete.subcategory');
 
+        //Active Or Inactive
+        Route::get('/subcategory-inactive/{id}', 'InactiveSubCategory')->name('subcategory.inactive');
+        Route::get('/subcategory-active/{id}', 'ActiveSubCategory')->name('subcategory.active');
 
-        Route::get('/inactive-subcategory/{id}', 'InactiveSubCategory')->name('inactive.subcategory');
-        Route::get('/active-subcategory/{id}', 'ActiveSubCategory')->name('active.subcategory');
-
+        //GetSubCategory
         Route::get('/subcategory/ajax/{category_id}', 'GetSubCategory');
+
 
     });
 
@@ -148,6 +150,12 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
 
         Route::get('/all', 'AllChild')->name('all.child');
         Route::post('/store', 'StoreChild')->name('store.child');
+        Route::post('/update', 'UpdateChild')->name('update.child');
+        Route::get('/delete/{id}', 'DeleteChild')->name('delete.child');
+
+        //Active Or Inactive
+        Route::get('/child-inactive/{id}', 'InactiveChildCategory')->name('child.inactive');
+        Route::get('/child-active/{id}', 'ActiveChildCategory')->name('child.active');
 
     });
 
