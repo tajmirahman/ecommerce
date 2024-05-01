@@ -24,8 +24,8 @@ class BrandController extends Controller
             ],
 
             [
-                'banner_name.required' => 'The Banner Name is required',
-                'banner_image.required' => 'The Banner Image is required',
+                'brand_name.required' => 'The Brand Name is required',
+                'brand_image.required' => 'The Brand Image is required',
             ],
 
         );

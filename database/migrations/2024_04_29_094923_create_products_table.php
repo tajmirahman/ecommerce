@@ -31,18 +31,18 @@ return new class extends Migration
             $table->string('sku_code', 50)->unique()->nullable();
             $table->string('mf_code', 50)->unique()->nullable();
             $table->string('product_code', 50)->nullable();
-            $table->json('tags')->nullable();
+            $table->string('tags')->nullable();
 
             $table->json('color_id')->nullable();
             $table->longText('short_desc')->nullable();
             $table->longText('overview')->nullable();
 
             $table->string('product_image')->nullable();
-            $table->integer('qty')->default(1);
+            $table->string('qty')->nullable();
             $table->string('stock', 50)->nullable();
 
-            $table->double('selling_price')->nullable();
-            $table->double('discount_price')->nullable();
+            $table->string('selling_price')->nullable();
+            $table->string('discount_price')->nullable();
 
             $table->integer('featured')->nullable();
             $table->integer('special_offer')->nullable();

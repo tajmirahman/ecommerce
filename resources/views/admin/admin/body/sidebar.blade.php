@@ -29,8 +29,14 @@
             <ul>
                 <li> <a href="{{ route('all.product') }}"><i class="bx bx-right-arrow-alt"></i>Product</a>
                 </li>
-            </ul><ul>
+            </ul>
+
+            <ul>
                 <li> <a href="{{ route('all.banner') }}"><i class="bx bx-right-arrow-alt"></i>Banner</a>
+                </li>
+            </ul>
+            <ul>
+                <li> <a href="{{ route('all.slider') }}"><i class="bx bx-right-arrow-alt"></i>Slider</a>
                 </li>
             </ul>
 

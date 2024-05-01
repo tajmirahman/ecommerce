@@ -52,14 +52,14 @@
                                     <td>{{ $product->product_name }}</td>
                                     <td>{{ $product->selling_price }}</td>
                                     <td>
-                                        @if ($brand->status == 1)
+                                        @if ($product->status == 1)
                                             <span class="badge bg-success">Active</span>
                                         @else
                                             <span class="badge bg-danger">inactive</span>
                                         @endif
                                     </td>
                                     <td>
-                                        @if ($brand->status == 1)
+                                        @if ($product->status == 1)
                                             <a href="" title="Inactive"><i
                                                     class="fa-solid fa-thumbs-down fs-3"></i></i></a>
                                         @else
@@ -68,8 +68,12 @@
                                         @endif
 
 
+                                        <a href="{{ route('edit.product', $product->id) }}" title="Edit"><i
+                                            class="fa-regular fa-pen-to-square fs-3"></i>
+                                        </a>
+
                                         <a href="{{ route('delete.brand', $product->id) }}" id="delete" title="delete"><i
-                                                class="fa-solid fa-trash fs-3"></i></i>
+                                                class="fa-solid fa-trash fs-3"></i>
                                         </a>
 
                                     </td>

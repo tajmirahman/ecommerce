@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ChildController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\HomePageController;
+use App\Http\Controllers\Admin\SliderController;
 
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\BrandController;
@@ -93,8 +94,18 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //Product Section
     Route::controller(ProductController::class)->group(function () {
 
-        Route::get('/all','AllProduct')->name('all.product');
-        Route::get('/add','AddProduct')->name('add.product');
+        Route::get('/all/product','AllProduct')->name('all.product');
+        Route::get('/add/product','AddProduct')->name('add.product');
+        Route::post('/store/product','StoreProduct')->name('store.product');
+        Route::get('/edit/product/{id}','EditProduct')->name('edit.product');
+        Route::post('/update/product','UpdateProduct')->name('update.product');
+
+
+
+
+        //GetSubCategory
+        Route::get('/district/ajax/{category_id}', 'GetCheckDistrict');
+        Route::get('/state/ajax/{subcategory_id}', 'GetCheckChild');
 
     });
 
@@ -110,6 +121,21 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
 
         Route::get('/banner-inactive/{id}', 'BannerInactive')->name('banner.inactive');
         Route::get('/banner-active/{id}', 'BannerActive')->name('banner.active');
+    });
+
+
+    //Slider Section
+    Route::controller(SliderController::class)->prefix('slider')->group(function () {
+
+        Route::get('/all', 'AllSlider')->name('all.slider');
+        Route::post('/store', 'StoreSlider')->name('store.slider');
+        Route::post('/update', 'UpdateSlider')->name('update.slider');
+        Route::get('/delete/{id}', 'SliderSlider')->name('delete.slider');
+
+
+        Route::get('/inactive-slider/{id}', 'InactiveSlider')->name('inactive.slider');
+        Route::get('/active-slider/{id}', 'ActiveSlider')->name('active.slider');
+
     });
 
 
