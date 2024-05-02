@@ -8,13 +8,15 @@
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
         <div class="breadcrumb-title pe-3">Product</div>
         <div class="ps-3">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb mb-0 p-0">
-                    <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page">All Product</li>
-                </ol>
-            </nav>
+
+            <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">Total Product<span
+                        class="ms-2 badge bg-danger">{{ count($products) }}</span></li>
+                <!--end::Item-->
+
+            </ul>
         </div>
         <div class="ms-auto">
             <div class="btn-group">
@@ -46,7 +48,7 @@
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
                                     <td>
-                                        <img src="{{ asset('storage/brand/' . $product->product_image) }}" style="width: 40px;"
+                                        <img src="{{ asset($product->product_image) }}" style="width: 40px;"
                                             alt="">
                                     </td>
                                     <td>{{ $product->product_name }}</td>

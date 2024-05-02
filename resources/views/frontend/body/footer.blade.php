@@ -79,7 +79,7 @@
                     <li><i class="icon anm anm-cc-stripe"></i></li>
                     <li><i class="icon anm anm-cc-jcb"></i></li>
                 </ul>
-                <div class="copytext">&copy; 2023 Hema. All Rights Reserved.</div>
+                <div class="copytext">&copy; 2024 Hema. All Rights Reserved.</div>
             </div>
         </div>
     </div>
