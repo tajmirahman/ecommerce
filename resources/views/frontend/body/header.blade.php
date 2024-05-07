@@ -48,7 +48,7 @@
             @php
                 $categorys= App\Models\Admin\Category::latest()->get();
                 $subcategorys= App\Models\Admin\SubCategory::latest()->get();
-                $childcategorys= App\Models\Admin\ChildCategory::latest()->get();
+
             @endphp
 
 
@@ -67,6 +67,10 @@
                                 <ul class="row grid--uniform mmWrapper">
 
                                     @foreach ($subcategorys as $subcategory)
+
+                                    @php
+                                        $childcategorys= App\Models\Admin\ChildCategory::where('subcategory_id',$subcategory->id)->orderBy('childcategory_name','ASC')->get();
+                                    @endphp
 
                                     <li class="lvl-1 col-md-3 col-lg-3 w-22"><a href="#;" class="site-nav lvl-1 menu-title">{{ $subcategory->subcategory_name }}</a>
 
