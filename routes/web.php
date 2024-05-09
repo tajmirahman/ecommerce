@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Frontend\IndexController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,5 +33,11 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-
 require __DIR__.'/adminauth.php';
+
+
+// Frontend section
+
+    Route::get('/product-details/{id}/{slug}', [IndexController::class, 'ProductDetails']);
+
+

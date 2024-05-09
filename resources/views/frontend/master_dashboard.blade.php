@@ -8,7 +8,7 @@
         <meta name="description" content="description">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Title Of Site -->
-        <title>Hema - Multipurpose eCommerce Bootstrap 5 Html Template</title>
+        <title>Online Shoe E-commerce</title>
         <!-- Favicon -->
         <link rel="shortcut icon" href="{{ asset('frontend') }}/assets/images/favicon.png" />
         <!-- Plugins CSS -->
@@ -426,46 +426,7 @@
 
 
 
-            <!--Newsletter Modal-->
-            <div class="newsletter-modal style3 modal fade" id="newsletter_modal" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
-                    <div class="modal-content border-0">
-                        <div class="modal-body p-0">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            <div class="newsletter-wrap d-flex flex-column">
-                                <div class="newsltr-img d-none d-sm-none d-md-block">
-                                    <img class="rounded-bottom-0 blur-up lazyload" data-src="{{ asset('frontend') }}/assets/images/newsletter/newsletter-s6.webp" src="{{ asset('frontend') }}/assets/images/newsletter/newsletter-s6.webp" alt="Join Our Newsletter Get 20% OFF First Order" title="Join Our Newsletter Get 20% OFF First Order" width="582" height="202" />
-                                </div>
-                                <div class="newsltr-text text-center">
-                                    <div class="wraptext mw-100">
-                                        <h2 class="title text-transform-none">Join Our Newsletter <br>Get 20% OFF First Order</h2>
-                                        <p class="text">Stay Informed! Monthly Tips, Tracks and Discount.</p>
-                                        <form action="#" method="post" class="mcNewsletter mb-3">
-                                            <div class="input-group">
-                                                <input type="email" class="form-control input-group-field newsletter-input" name="email" value="" placeholder="Enter your email address..." required />
-                                                <button type="submit" class="input-group-btn btn btn-secondary newsletter-submit" name="commit">Subscribe</button>
-                                            </div>
-                                        </form>
-                                        <ul class="list-inline social-icons d-inline-flex justify-content-center mb-3 w-100">
-                                            <li class="list-inline-item"><a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"><i class="icon anm anm-facebook-f"></i></a></li>
-                                            <li class="list-inline-item"><a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"><i class="icon anm anm-twitter"></i></a></li>
-                                            <li class="list-inline-item"><a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Pinterest"><i class="icon anm anm-pinterest-p"></i></a></li>
-                                            <li class="list-inline-item"><a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin"><i class="icon anm anm-linkedin-in"></i></a></li>
-                                            <li class="list-inline-item"><a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i class="icon anm anm-instagram"></i></a></li>
-                                            <li class="list-inline-item"><a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"><i class="icon anm anm-youtube"></i></a></li>
-                                        </ul>
-                                        <div class="customCheckbox checkboxlink clearfix justify-content-center">
-                                            <input id="dontshow" name="newsPopup" type="checkbox" />
-                                            <label for="dontshow" class="mb-0">Don't show this popup again</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End Newsletter Modal-->
+            
 
 
             <!-- Including Jquery/Javascript -->
