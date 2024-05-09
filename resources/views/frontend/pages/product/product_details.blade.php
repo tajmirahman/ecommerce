@@ -420,7 +420,7 @@
                     <!-- Start Product Image -->
                     <div class="product-image">
                         <!-- Start Product Image -->
-                        <a href="product-layout1.html" class="product-img rounded-0"><img class="rounded-0 blur-up lazyload" src="{{ asset($relProduct->product_image) }}" alt="Product" title="Product" width="625" height="808" /></a>
+                        <a href="{{ url('product-details/'.$relProduct->id.'/'.$relProduct->product_slug) }}" class="product-img rounded-0"><img class="rounded-0 blur-up lazyload" src="{{ asset($relProduct->product_image) }}" alt="Product" title="Product" width="625" height="808" /></a>
                         <!-- End Product Image -->
                         <!-- Product label -->
                         <div class="product-labels"><span class="lbl on-sale">{{ $relProduct->stock }}</span></div>
@@ -451,7 +451,7 @@
                     <div class="product-details text-left">
                         <!-- Product Name -->
                         <div class="product-name">
-                            <a href="product-layout1.html">{{ $relProduct->product_name }}</a>
+                            <a href="{{ url('product-details/'.$relProduct->id.'/'.$relProduct->product_slug) }}">{{ $relProduct->product_name }}</a>
                         </div>
                         <!-- End Product Name -->
 

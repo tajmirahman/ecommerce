@@ -44,7 +44,7 @@
                                         <!-- Start Product Image -->
                                         <div class="product-image">
                                             <!-- Start Product Image -->
-                                            <a href="" class="product-img rounded-3"><img
+                                            <a href="{{ url('product-details/'.$product->id.'/'.$product->product_slug) }}" class="product-img rounded-3"><img
                                                     class="blur-up lazyload" src="{{ asset($product->product_image) }}"
                                                     alt="Product" title="Product" width="625" height="808" /></a>
                                             <!-- End Product Image -->
