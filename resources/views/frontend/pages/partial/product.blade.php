@@ -157,12 +157,6 @@
                                         </div>
                                         <!-- End product details -->
 
-                                        <div class="product-form-submit buyit fl-1 ms-3 mb-3">
-                                            <button type="submit"
-                                                class="btn btn-primary proceed-to-checkout"><span>Buy it
-                                                    now</span></button>
-                                        </div>
-
                                     </div>
                                 </div>
                             @endforeach
@@ -195,7 +189,7 @@
                                         <!-- Start Product Image -->
                                         <div class="product-image">
                                             <!-- Start Product Image -->
-                                            <a href="product-layout1.html" class="product-img rounded-3"><img
+                                            <a href="{{ url('product-details/'.$product->id.'/'.$product->product_slug) }}" class="product-img rounded-3"><img
                                                     class="blur-up lazyload"
                                                     src="{{ asset($product->product_image) }}" alt="Product"
                                                     title="Product" width="625" height="808" /></a>
@@ -248,7 +242,7 @@
                                         <div class="product-details">
                                             <!-- Product Name -->
                                             <div class="product-name">
-                                                <a href="product-layout1.html">{{ $product->product_name }}</a>
+                                                <a href="{{ url('product-details/'.$product->id.'/'.$product->product_slug) }}">{{ $product->product_name }}</a>
                                             </div>
                                             <!-- End Product Name -->
 
@@ -309,11 +303,7 @@
                                         </div>
                                         <!-- End product details -->
 
-                                        <div class="product-form-submit buyit fl-1 ms-3 mb-3">
-                                            <button type="submit"
-                                                class="btn btn-primary proceed-to-checkout"><span>Buy it
-                                                    now</span></button>
-                                        </div>
+
 
                                     </div>
                                 </div>
@@ -348,7 +338,7 @@
                                         <!-- Start Product Image -->
                                         <div class="product-image">
                                             <!-- Start Product Image -->
-                                            <a href="product-layout1.html" class="product-img rounded-3"><img
+                                            <a href="{{ url('product-details/'.$product->id.'/'.$product->product_slug) }}" class="product-img rounded-3"><img
                                                     class="blur-up lazyload"
                                                     src="{{ asset($product->product_image) }}" alt="Product"
                                                     title="Product" width="625" height="808" /></a>
@@ -401,7 +391,7 @@
                                         <div class="product-details">
                                             <!-- Product Name -->
                                             <div class="product-name">
-                                                <a href="product-layout1.html">{{ $product->product_name }}</a>
+                                                <a href="{{ url('product-details/'.$product->id.'/'.$product->product_slug) }}">{{ $product->product_name }}</a>
                                             </div>
                                             <!-- End Product Name -->
 
@@ -462,11 +452,7 @@
                                         </div>
                                         <!-- End product details -->
 
-                                        <div class="product-form-submit buyit fl-1 ms-3 mb-3">
-                                            <button type="submit"
-                                                class="btn btn-primary proceed-to-checkout"><span>Buy it
-                                                    now</span></button>
-                                        </div>
+
 
                                     </div>
                                 </div>

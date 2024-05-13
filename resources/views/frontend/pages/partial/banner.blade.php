@@ -1,3 +1,9 @@
+@php
+    $banners= App\Models\Banner::find(1);
+    $bannerss= App\Models\Banner::find(2);
+    $bannersss= App\Models\Banner::find(3);
+@endphp
+
 <section class="section collection-banners pb-0">
     <div class="container">
         <div class="collection-banner-grid">
@@ -6,7 +12,7 @@
                     <div class="collection-item sp-col">
                         <a href="shop-left-sidebar.html" class="zoom-scal">
                             <div class="img">
-                                <img class="blur-up lazyload" data-src="{{ asset('frontend') }}/assets/images/collection/demo1-ct-img1.jpg" src="{{ asset('frontend') }}/assets/images/collection/demo1-ct-img1.jpg" alt="Women Wear" title="Women Wear" width="645" height="723" />
+                                <img class="blur-up lazyload" data-src="{{ asset($banners->banner_image) }}" src="{{ asset($banners->banner_image) }}" alt="Women Wear" title="Women Wear" width="645" height="723" />
                             </div>
                             <div class="details middle-right">
                                 <div class="inner">
@@ -22,9 +28,9 @@
                     <div class="collection-item sp-col">
                         <a href="shop-left-sidebar.html" class="zoom-scal">
                             <div class="img">
-                                <img class="blur-up lazyload" data-src="{{ asset('frontend') }}/assets/images/collection/demo1-ct-img2.jpg" src="{{ asset('frontend') }}/assets/images/collection/demo1-ct-img2.jpg" alt="Mens Wear" title="Mens Wear" width="645" height="344" />
+                                <img class="blur-up lazyload" data-src="{{ asset($bannerss->banner_image) }}" src="{{ asset($bannerss->banner_image) }}" alt="Mens Wear" title="Mens Wear" width="315" height="330" />
                             </div>
-                            <div class="details middle-left">
+                            <div class="details middle-right">
                                 <div class="inner">
                                     <h3 class="title mb-2">Mens Wear</h3>
                                     <p class="mb-3">Tailor-made with passion</p>
@@ -36,7 +42,7 @@
                     <div class="collection-item sp-col">
                         <a href="shop-left-sidebar.html" class="zoom-scal">
                             <div class="img">
-                                <img class="blur-up lazyload" data-src="{{ asset('frontend') }}/assets/images/collection/demo1-ct-img3.jpg" src="{{ asset('frontend') }}/assets/images/collection/demo1-ct-img3.jpg" alt="Kids Wear" title="Kids Wear" width="645" height="349" />
+                                <img class="blur-up lazyload" data-src="{{ asset($bannersss->banner_image) }}" src="{{ asset($bannersss->banner_image) }}" alt="Kids Wear" title="Kids Wear" width="315" height="300" />
                             </div>
                             <div class="details middle-right">
                                 <div class="inner">

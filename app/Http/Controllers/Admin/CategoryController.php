@@ -20,12 +20,12 @@ class CategoryController extends Controller
         $validator= $request->validate(
             [
             'category_name'=> 'required|max:255',
-            'category_image'=> 'required|mimes:jpeg,png,jpg,gif,svg,webp',
+            'category_image'=> 'mimes:jpeg,png,jpg,gif,svg,webp',
             ],
 
             [
                 'category_name.required' => 'The Category Name is required',
-                'category_image.required' => 'The Category Image is required',
+
             ],
 
         );
@@ -64,10 +64,10 @@ class CategoryController extends Controller
                     toastr()->warning('Image upload failed! plz try again.');
                 }
             }
-            toastr()->success('Category Created Successfully');
+           
         }
 
-        return redirect()->route('all.category');
+        return redirect()->route('all.category')->with('success','Category Created Successfully');
 
     }// End Methods
 

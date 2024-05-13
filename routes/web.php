@@ -38,6 +38,9 @@ require __DIR__.'/adminauth.php';
 
 // Frontend section
 
+    // Product-details route
     Route::get('/product-details/{id}/{slug}', [IndexController::class, 'ProductDetails']);
 
+    // Category-wise route
+    Route::get('/category/details/{id}/{slug}', [IndexController::class, 'CategoryDetails']);
 

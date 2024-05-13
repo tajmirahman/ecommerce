@@ -346,7 +346,7 @@
             <div class="user-box dropdown">
                 <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret"
                     href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="{{ !empty($profileData->photo) ? url('upload/admin_images/' . $profileData->photo) : url('upload/no_image.jpg') }}" class="user-img"
+                    <img src="{{ !empty($profileData->photo) ? url('upload/admin_images/' . $profileData->photo) : 'https://ui-avatars.com/api/?name=' . urlencode($profileData->name) }}" class="user-img"
                         alt="user avatar">
                     <div class="user-info ps-3">
                         <p class="user-name mb-0">{{ $profileData->name }}</p>

@@ -64,8 +64,9 @@
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
                                     <td>
-                                        <img src="{{ asset('storage/category/' . $category->category_image) }}"
+                                        <img src="{{ !empty($category->category_image) ? url('storage/category/' . $category->category_image) : 'https://ui-avatars.com/api/?name=' . urlencode($category->category_name) }}"
                                             style="width: 40px;" alt="">
+
                                     </td>
                                     <td>{{ $category->category_name }}</td>
                                     <td>

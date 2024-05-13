@@ -46,7 +46,7 @@
             <!--End Logo-->
 
             @php
-                $categorys= App\Models\Admin\Category::latest()->get();
+                $categorys= App\Models\Admin\Category::find(1);
                 $subcategorys= App\Models\Admin\SubCategory::latest()->get();
 
             @endphp
@@ -56,13 +56,13 @@
             <div class="col-1 col-sm-1 col-md-1 col-lg-8 align-self-center d-menu-col">
                 <nav class="navigation" id="AccessibleNav">
                     <ul id="siteNav" class="site-nav medium center">
-                        <li class="lvl1 parent dropdown"><a href="#">Home </a>
+                        <li class="lvl1 parent dropdown"><a href="{{ url('/') }}">Home </a>
 
                         </li>
-                        @foreach ($categorys as $category)
 
 
-                        <li class="lvl1 parent megamenu"><a href="#">{{ $category->category_name }} <i class="icon anm anm-angle-down-l"></i></a>
+
+                        <li class="lvl1 parent megamenu"><a href="#">{{ $categorys->category_name }} <i class="icon anm anm-angle-down-l"></i></a>
                             <div class="megamenu style1">
                                 <ul class="row grid--uniform mmWrapper">
 
@@ -78,7 +78,7 @@
 
 
                                         <ul class="subLinks">
-                                            <li class="lvl-2"><a href="collection-style1.html" class="site-nav lvl-2">{{ $childcat->childcategory_name }}</a></li>
+                                            <li class="lvl-2"><a href="{{ url('category/details/'.$childcat->id . '/' . $childcat->childcategory_slug) }}" class="site-nav lvl-2">{{ $childcat->childcategory_name }}</a></li>
 
 
                                         </ul>
@@ -92,7 +92,7 @@
                             </div>
                         </li>
 
-                        @endforeach
+
 
                         <li class="lvl1 parent dropdown"><a href="#">Pages <i class="icon anm anm-angle-down-l"></i></a>
                             <ul class="dropdown">

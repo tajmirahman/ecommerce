@@ -102,6 +102,7 @@
                 </div>
                 <!-- End Product Details -->
 
+
                 <!-- Product Form -->
                 <form method="post" action="#" class="product-form product-form-border hidedropdown">
                     <!-- Swatches -->
@@ -110,17 +111,17 @@
                         <div class="product-item swatches-image w-100 mb-4 swatch-0 option1" data-option-index="0">
                             <label class="label d-flex align-items-center">Color:<span class="slVariant ms-1 fw-bold">Blue</span></label>
                             <ul class="variants-clr swatches d-flex-center pt-1 clearfix">
-                                <li class="swatch x-large available active blue"><span class="swatchLbl" data-bs-toggle="tooltip" data-bs-placement="top" title="Blue"></span></li>
 
-                                <li class="swatch x-large available black"><span class="swatchLbl" data-bs-toggle="tooltip" data-bs-placement="top" title="Black"></span></li>
-                                <li class="swatch x-large available purple"><span class="swatchLbl" data-bs-toggle="tooltip" data-bs-placement="top" title="Purple"></span></li>
-                                <li class="swatch x-large available green"><span class="swatchLbl" data-bs-toggle="tooltip" data-bs-placement="top" title="Green"></span></li>
-                                <li class="swatch x-large soldout yellow"><span class="swatchLbl" data-bs-toggle="tooltip" data-bs-placement="top" title="Yellow"></span></li>
+                                @foreach ($colors as $color)
+                                <li class="swatch x-large available active"><span class="swatchLbl bg-light" data-bs-toggle="tooltip" data-bs-placement="top">{{ $color->name }}</span></li>
+                                @endforeach
+
+
                             </ul>
                         </div>
                         <!-- End Swatches Color -->
                         <!-- Swatches Size -->
-                        <div class="product-item swatches-size w-100 mb-4 swatch-1 option2" data-option-index="1">
+                        {{-- <div class="product-item swatches-size w-100 mb-4 swatch-1 option2" data-option-index="1">
                             <label class="label d-flex align-items-center">Size:<span class="slVariant ms-1 fw-bold">S</span> <a href="#sizechart-modal" class="text-link sizelink text-muted size-chart-modal" data-bs-toggle="modal" data-bs-target="#sizechart_modal">Size Guide</a></label>
                             <ul class="variants-size size-swatches d-flex-center pt-1 clearfix">
                                 <li class="swatch x-large soldout"><span class="swatchLbl" data-bs-toggle="tooltip" data-bs-placement="top" title="XS">XS</span></li>
@@ -129,7 +130,7 @@
                                 <li class="swatch x-large available"><span class="swatchLbl" data-bs-toggle="tooltip" data-bs-placement="top" title="L">L</span></li>
                                 <li class="swatch x-large available"><span class="swatchLbl" data-bs-toggle="tooltip" data-bs-placement="top" title="XL">XL</span></li>
                             </ul>
-                        </div>
+                        </div> --}}
                         <!-- End Swatches Size -->
                     </div>
                     <!-- End Swatches -->
@@ -173,20 +174,15 @@
                     <div class="freeShipMsg featureText mb-3"><i class="icon anm anm-podcast-r"></i>Cash on Delivery available</div>
                     <p class="product-stock d-flex">Availability:
                         <span class="pro-stockLbl ps-0">
-                            <span class="d-flex-center stockLbl instock text-uppercase">In stock</span>
+                            <span class="d-flex-center stockLbl instock text-uppercase">{{ $products->stock }}</span>
                         </span>
                     </p>
-                    <p class="product-vendor">Vendor:<span class="text"><a href="#">Panta</a></span></p>
-                    <p class="product-type">Product Type:<span class="text">Tops</span></p>
-                    <p class="product-sku">SKU:<span class="text">RF104</span></p>
+
+                    <p class="product-sku">SKU:<span class="bdge bg-info">{{ $products->sku_code }}</span></p>
                 </div>
                 <!-- End Product Info -->
 
-                <!-- Product Info -->
-                <div class="freeShipMsg featureText mt-3" data-price="199"><i class="icon anm anm-truck-r"></i>Spent <b class="freeShip"><span class="money" data-currency-usd="$199.00" data-currency="USD">$199.00</span></b> More for Free shipping</div>
-                <div class="shippingMsg featureText mb-0"><i class="icon anm anm-clock-r"></i>Estimated Delivery Between <b id="fromDate">Wed, May 1</b> and <b id="toDate">Tue, May 7</b>.</div>
 
-                <!-- End Product Info -->
             </div>
         </div>
     </div>
